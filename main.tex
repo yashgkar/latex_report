@@ -1,0 +1,461 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[left=37 mm, right=23.4 mm, top=23.4 mm, bottom=32 mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{indentfirst}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{float}
+\restylefloat{table}
+\renewcommand{\rmdefault}{ptm}
+\setlength{\parindent}{2em}
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\nouppercase{\thepage}}
+\fancyhead[LO]{\sc \nouppercase{\rightmark}}
+\fancyhead[RE]{\rm \nouppercase{\leftmark}}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=black
+}
+\onehalfspacing
+\graphicspath{{images/}}
+
+
+
+\begin{document}
+\cfoot{SITRC, Department of Computer Engineering 2019-20}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newpage
+\begin{center}
+\thispagestyle{empty}
+\large{\textbf{SAVITRIBAI PHULE PUNE UNIVERSITY }}\\[0.5cm]
+\large{\textbf{A PRELIMINARY PROJECT REPORT\\ \large{ON}}}\\[0.3cm]
+\large{\textsc {\textbf{ANDROID APP FOR PERSONAL DATA SECURITY USING CLOUD COMPUTING}}}\\[0.7cm]
+\large{\textsc{SUBMITTED TOWARDS THE PARTIAL FULFILLMENT OF THE REQUIREMENTS OF}}\\[0.2cm]
+{\textsc {\textbf{BACHELOR OF ENGINEERING (Computer Engineering)}}}\\[0.1cm]
+\large{\textbf{BY}}\\
+
+\begin{table}[h]
+\centering
+\large{
+\begin{tabular}{ll}
+Name & Exam No.\\
+Yash Garudkar & 71720484H\\
+Anushree Sisodia & 71720383C\\
+Mohit Sonawane & 71623965F\\
+\end{tabular}
+}
+\end{table}
+\large{\textbf{UNDER THE GUIDANCE OF}}\\[0.3cm]
+\large{\textbf{DR. AMIT GADEKAR}}\\[0.5cm]
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=3cm, angle=0]{sandiplogo.jpg}
+\end{center}
+\end{figure}
+\textbf{SANDIP INSTITUTE OF TECHNOLOGY AND RESEARCH CENTRE}\\
+\large{\textbf{MAHIRAVANI, NASHIK}}\\[0.3cm]
+\large{\textbf{DEPARTMENT OF COMPUTER ENGINEERING}}\\
+\large{\textbf{\\2019-2020}}
+\end{center}
+
+
+%*********certificate********
+\newpage
+\begin{center}
+\thispagestyle{empty}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=3cm, angle=0]{sandiplogo.jpg}
+\end{center}
+\end{figure}
+\large{\textbf{SANDIP INSTITUTE OF TECHNOLOGY AND RESEARCH CENTRE}}\\
+\large{\textbf{MAHIRAVANI, NASHIK}}\\[0.3cm]
+\large{\textbf{DEPARTMENT OF COMPUTER ENGINEERING}}\\
+\Large{\textbf{CERTIFICATE}}\\
+This is to certify that the project titled\\
+\large{\textsc {\textbf{ANDROID APP FOR PERSONAL DATA SECURITY USING CLOUD COMPUTING}}}\\[0.4cm]
+Submitted By
+\begin{table}[h]
+\centering
+\large{
+\begin{tabular}{ll}
+Name & Exam No.\\
+Yash Garudkar & 71720484H\\
+Anushree Sisodia & 71720383C\\
+Mohit Sonawane & 71623965F\\
+\end{tabular}
+}
+\end{table}
+\justify
+is a bonafide work carried out by Students under the supervision of Prof. Amit Gadekar
+and it is submitted towards the partial fulfilment of the requirement of Bachelor of
+Engineering (Computer Engineering) Project during academic year 2019-20.\\
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cc}
+
+\textbf{Dr. Amit Gadekar}  \hspace{40pt}       &  \textbf{Dr. Amol D. Potgantwar}  \\
+\textbf{Internal Guide }         \hspace{40pt}       &\textbf{ H.O.D.              }          \\
+\textbf{Dept. of Computer Engineering}  \hspace{40pt}  & \textbf{Dept. of Computer Engineering}
+\end{tabular}
+\end{table}
+\end{center}
+
+\chapter*{\centering {Abstract}}
+add data here
+
+\textit{\textbf{Keywords:}add data here}
+
+
+
+\chapter*{\centering {Acknowledgements}}
+
+
+\large{It gives us a great pleasure in presenting the preliminary project report on \textbf{Android App For Personal Data Security Using Cloud Computing. }}\\
+
+\large{We would like to thank our internal guide \textbf{Dr. Amit R. Gadekar} for giving us all the
+help and guidance we needed. We are really grateful to them for their kind support
+and their valuable suggestions.}\\
+
+\large{We are also grateful to \textbf{Dr. Amol D. Potgantwar}, Head of Computer Engineering
+Department, SITRC for his indispensable support, suggestions.}\\
+
+\large{We are also thankful to \textbf{Dr. S. T. Gandhe} for providing various resources such as
+laboratory with all needed software platforms, continuous Internet connection, for
+Our Project.}\\
+
+\begin{table}[h]
+\begin{flushright}
+\large{
+\begin{tabular}{l}
+Yash Garudkar\\
+Anushree Sisodia\\
+Mohit Sonawane\\
+(B.E. Computer Engineering)
+\end{tabular}
+}
+\end{flushright}
+\end{table}
+
+\tableofcontents
+\listoffigures
+\listoftables
+%centering the chapter name on a same page
+\titleformat{\chapter}[display]
+{\normalfont\Large\filcenter}
+{\vspace*{\fill}
+ \vspace{1pt}%
+ \vspace{1pt}%
+ \LARGE\MakeUppercase{\chaptertitlename}~\thechapter}
+{1pt}
+{\Huge}
+[\vspace*{\fill}\newpage]
+
+
+\chapter{\textbf{INTRODUCTION}}
+\section{PROJECT IDEA}
+add data here
+
+\section{MOTIVATION FOR THE PROJECT}
+add data here
+
+\section{LITERATURE SURVEY}
+
+add data here
+
+\chapter{PROBLEM DEFINITION AND SCOPE}
+\section{PROBLEM STATEMENT}
+add data here
+\subsection{GOALS AND OBJECTIVES}
+\begin{itemize}
+\item add data here
+\end{itemize}
+
+\subsection{RELEVANT MATHEMATICS ASSOCIATED WITH THE PROJECT}
+\subsubsection{System Description}
+\begin{enumerate}
+\item add data here
+\end{enumerate}
+
+
+\subsection{STATEMENT OF SCOPE}
+\begin{itemize}
+\item add data here
+\end{itemize}
+
+\section{SOFTWARE CONTEXT}
+\begin{itemize}
+    \item add data here
+\end{itemize}
+
+\section{MAJOR CONSTRAINTS}
+\begin{itemize}
+\item add data here
+\end{itemize}
+
+\section{METHODOLOGIES OF PROBLEM SOLVING AND EFFICIENCY ISSUES}
+\begin{itemize}
+\item add data here
+\end{itemize}
+
+\section{SCENARIO IN WHICH MULTI CORE, EMBEDDED AND DISTRIBUTED COMPUTING IS USED}
+add data here
+\section{OUTCOME}
+\begin{itemize}
+\item add data here
+\end{itemize}
+
+\section{APPLICATIONS}
+\begin{itemize}
+\item 
+\end{itemize}
+
+\chapter{PROJECT PLAN}
+A project plan is a formal document designed to guide the control and execution of a project. It is the key to a successful project and is the most important document that needs to be created when starting any business project. A typical project plan consists of: A statement of work, a resource list, work breakdown structure, a project schedule and a risk plan. The scope includes the business need and business problem, the project objectives, deliverance's, and key milestones. Project baselines are established in the project plan. 
+\section{PROJECT ESTIMATES}
+Project estimates are projections of costs, task completion times and resource needs for a project, often broken down by activity. Estimates are the basis for plans, decisions and schedules and their accuracy is critical.
+\subsection{RECONCILED ESTIMATES}
+Reconciled Estimates is the method of bringing together all of the data and analyses into one final estimate of value and finding the approximation, which is a value that can be used for some purpose even if input data may be incomplete, uncertain, or unstable. It determines how much money, effort, resources, and time it will take to build a specific system or product. 
+\subsubsection{COST ESTIMATE}
+A cost estimate is the approximation of the cost of a program, project, or operation. It is the product of the cost estimating process. The cost estimate has a single total value and may have identifiable component values. 
+\subsubsection{TIME ESTIMATE}
+A time estimate is the approximation of the time of a program, project, or operation. It is the product of the time estimating process. The time estimate is generally the approximate time taken in hours or other time unit to complete a given task or the process. 
+\subsection{PROJECT RESOURCES}
+A resource is a necessary asset whose main role is to help carry out a certain task or project. A resource can be a person, a team, a tool, finances, and time. Most projects require many different resources in order to be completed. Resources should be assessed and allocated before a project begins. The general resources which are required to develop our project are categorized into two parts hardware and software resources required. 
+\begin{itemize}
+\item {\textbf{HARDWARE}:   Smart Phone with: 1 GB RAM, 1 GHz or higher Clock Processor; Computer with: Internet connection, Internet Browser.} 
+\item{\textbf{SOFTWARE}:Flutter, Firebase, GCP (Google Cloud Platform), React, Node.js}
+\end{itemize}
+
+\section{RISK MANAGEMENT W.R.T. NP HARD ANALYSIS}
+This section discusses Project risks and the approach to managing them.  
+\subsection{RISK IDENTIFICATION}
+For risks identification, review of scope document, requirements specifications and schedule is done.  Answers to questionnaire revealed some risks. 
+\begin{enumerate}
+\item Software and customer managers formally committed to support the Project.  
+\item End-users enthusiastically committed to the project and the system/product to be built.  
+\item Requirements fully understood by the  group.  
+\item End-users have realistic expectations from the Project as it is going to be used on field as well as off field.  
+\item Whole group has adequate knowledge of Technologies and Softwares to be used.  
+\item Out of the multiple functionalities requirement provided by Customer/user, only few of them are being implemented.  
+\item Number of people on the project team are adequate to do the Project and their respective contribution  
+\item All the customers/users who are going to use the Application, know the importance of the project and its requirement
+\end{enumerate}
+\newpage
+\subsection{RISK ANALYSIS}
+The risks for the Project can be analyzed within the constraints of time and quality.  
+
+
+
+\newpage
+
+\section{PROJECT SCHEDULE}
+\subsection{PROJECT TASK SET (Major Tasks in the Project stages are):}
+\begin{itemize}
+\item Task 1:
+\item Task 2:
+\item Task 3:
+\item Task 4:
+\item Task 5:
+\end{itemize}
+%table remaining
+\subsection{TASK NETWORK}
+Project tasks and their dependencies are noted in this diagrammatic form.
+\subsection{TIMELINE CHART}
+A project timeline chart is presented. This may include a time line for the entire project.  
+
+\section{TEAM ORGANIZATION}
+Team is well organized and Roles of each members are assigned for respective contributions.
+\subsection{TEAM STRUCTURE}
+Team structure/Role for each member of group is defined. Responsibilities/Tasks divided are as per Technology and Tools to be used. Divided tasks are Android/iOS Application Development using Flutter, Database Management using Firebase, Back-end algorithm for Prediction and other functionalities, Documentation and Report.
+\subsection{MANAGEMENT REPORTING AND COMMUNICATION}
+Report book is being maintained by Guide and Reviewer with regular entries of updates and status of project implementation and related work in every 15 days.
+
+\chapter{SOFTWARE REQUIREMENT SPECIFICATION}
+\section{INTRODUCTION}
+add data here
+\subsection{PURPOSE AND SCOPE OF DOCUMENT}
+add data here
+\subsection{OVERVIEW OF RESPONSIBILITIES OF DEVELOP}
+They are responsible for the design, testing and maintenance of software programs  for computer operating systems or applications, such as word  processing or database management systems.
+
+\section{USAGE SCENARIO}
+This section provides various usage scenarios for the system to be developed.   
+\subsection{USER PROFILES}
+\begin{enumerate}
+\item Shop Employee (Cashier)
+\item Customer (Buyer)
+\item Government Officials
+\end{enumerate}
+
+\subsection{USE-CASES}
+All use-cases for the software are presented. Description of all main Use cases using use case template is to be provided.\\
+
+%***********table*********
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline Sr No. & Use Case & Description & Actors & Assumptions\\
+\hline 1 & Use Case 1 & Description & Actor & Assumption\\
+\hline
+\end{tabular}
+\caption{ Use Cases.}
+\label{tab:usec}
+\end{table}
+
+\subsection{USE-CASE VIEW}
+add data here 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=12cm, angle=0]{usecase.png}
+\end{center}
+\caption{Use Case Diagram}
+\label{tab:usecd}
+\end{figure}
+
+add data here
+
+
+\section{DATA MODEL AND DESCRIPTION}
+add data here
+\subsection{DATA DESCRIPTION}
+add data here
+\subsection{DATA OBJECTS AND RELATIONSHIPS}
+add data here
+\section{FUNCTIONAL MODEL AND DESCRIPTION}
+add data here
+\begin{enumerate}
+\item add data here
+\end{enumerate}
+
+
+\subsection{DATA FLOW DIAGRAM}
+add data here
+\subsubsection{Level 0 Data Flow Diagram}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=12cm, angle=0]{level0.png}
+\end{center}
+\caption{Level 0}
+\label{tab:l0}
+\end{figure}
+add data here 
+\subsubsection{Level 1 Data Flow Diagram}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=12cm, angle=0]{level1.png}
+\end{center}
+\caption{Level 1}
+\label{tab:l1}
+\end{figure}
+add data here
+\subsection{DESCRIPTION OF FUNCTIONS}
+add data here
+\subsection{ACTIVITY DIAGRAM}
+add data here
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=9cm, angle=0]{activity.png}
+\end{center}
+\caption{Activity Diagram}
+\label{tab:ad}
+\end{figure}
+add data here
+
+\subsection{NON FUNCTIONAL REQUIREMENTS:}
+\begin{enumerate}
+\item {\textbf{Performance Requirements:}\\add data here }
+\item {\textbf{Safety Requirements:}\\add data here}
+\item {\textbf{Security requirements:}\\add data here}
+\item {\textbf{Software Quality Attributes:}\\add data here}
+\end{enumerate}
+\subsection{STATE DIAGRAM}
+add data here
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=9cm, angle=0]{state.png}
+\end{center}
+\caption{State Diagram}
+\label{tab:state}
+\end{figure}
+add data here
+
+\subsection{DESIGN CONSTRAINTS}
+add data here
+\subsection{SOFTWARE INTERFACE DESCRIPTION}
+add data here
+
+\chapter{DETAILED DESIGN DOCUMENT}
+\section{SYSTEM DESIGN}
+add data here 
+\section{SYSTEM ARCHITECTURE}
+add data here
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=12cm, angle=0]{overallarchuml.png}
+\end{center}
+\caption{System Architecture Diagram}
+\label{tab:sysarch}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=12cm, angle=0]{shopreguml.png}
+\end{center}
+\caption{Shop Registration Diagram}
+\label{tab:sysarch}
+\end{figure}
+
+
+\newpage
+add data here
+
+\newpage
+\section{DATA DESIGN (USING APPENDICES A AND B)}
+A description of all data structures including internal, global, and temporary data structures, database design (tables), file formats.
+\subsection{INTERNAL SOFTWARE DATA STRUCTURE}
+Data structures that are passed among components the software are described. 
+\subsection{GLOBAL DATA STRUCTURE}
+Data structured that are available to major portions of the architecture are described.  
+\subsection{TEMPORARY DATA STRUCTURE}
+Files created for interim use are described.
+\subsection{DATABASE DESCRIPTION}
+Database(s) / Files created/used as part of the application is(are) described. 
+\section{COMPONENT DESIGN}
+add data here
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=12cm, angle=0]{file.png}
+\end{center}
+\caption{Class Diagram}
+\label{tab:classd}
+\end{figure}
+
+\chapter{SUMMARY AND CONCLUSION}
+\section{CONCLUSION}
+add conclusion
+
+\chapter{REFERENCES}
+
+\begin{enumerate}[ {[}1{]} ]
+\item add data here
+\end{enumerate}
+
+\end{document}
